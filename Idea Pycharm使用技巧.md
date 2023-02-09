@@ -1,37 +1,91 @@
 # Idea Pycharm使用技巧
 
-**自带**
+### 1.JDK的配置情况
 
-1.Database
+<u>*1.File > Project Structure > SDKs(JDK)*</u>
 
-2.RestfulTool
+* IDE使用的JDK
 
-**设置**
+![image-20230209203946454](C:\Users\11782\AppData\Roaming\Typora\typora-user-images\image-20230209203946454.png)
 
-3.取消大小写敏感
 
-4.格式化 ctrl+alt+L
 
-5.自动导包
+<u>*2.File > Project Structure > Project*</u>
 
-6.SonarLint插件：右键点击扫描代码规范
+* 当前项目使用的JDK版本和使用的语言level规范（尽量比配）。
 
-7.alibaba代码规范插件
+* 当前编译的文件输出目录
 
-**调试**
+![image-20230209204152325](C:\Users\11782\AppData\Roaming\Typora\typora-user-images\image-20230209204152325.png)
 
-8.watch
+### 2.IDEA详细设置
 
-Pycharm
+* 设置打开时候是否默认上次关闭的项目
 
-**调试**
+![image-20230209205211818](C:\Users\11782\AppData\Roaming\Typora\typora-user-images\image-20230209205211818.png)
 
-1.step over 一步一步的走
+* 取消自动更新（版本和插件）
 
-2.step into 跳转到当前这行调用的函数中
+![image-20230209205422742](C:\Users\11782\AppData\Roaming\Typora\typora-user-images\image-20230209205422742.png)
 
-3.step out 跳出这个函数
+* 主题
 
-4.step into My code 和上面step into差不多
+  ![image-20230209205527452](C:\Users\11782\AppData\Roaming\Typora\typora-user-images\image-20230209205527452.png)
 
-5.step into curse 运行到光标的点的地方停
+* 背景图
+
+  ![image-20230209205703702](C:\Users\11782\AppData\Roaming\Typora\typora-user-images\image-20230209205703702.png)
+
+* ctrl+滚轮改变字体
+
+![image-20230209210729228](C:\Users\11782\AppData\Roaming\Typora\typora-user-images\image-20230209210729228.png)
+
+* 更改注释颜色
+
+  ![image-20230209211102774](C:\Users\11782\AppData\Roaming\Typora\typora-user-images\image-20230209211102774.png)
+
+* 代码提示自动补全
+
+  ![image-20230209211440342](C:\Users\11782\AppData\Roaming\Typora\typora-user-images\image-20230209211440342.png)
+
+* 自动导包的设置
+
+  ![image-20230209211558823](C:\Users\11782\AppData\Roaming\Typora\typora-user-images\image-20230209211558823.png)
+
+* 设置项目的文件编码
+
+  ![image-20230209211823838](C:\Users\11782\AppData\Roaming\Typora\typora-user-images\image-20230209211823838.png)
+
+* 设置控制台编码
+
+![image-20230209211937775](C:\Users\11782\AppData\Roaming\Typora\typora-user-images\image-20230209211937775.png)
+
+* 设置类头的文档信息
+
+  ![image-20230209212114178](C:\Users\11782\AppData\Roaming\Typora\typora-user-images\image-20230209212114178.png)
+
+* 代码自动编译
+
+  ![image-20230209212227646](C:\Users\11782\AppData\Roaming\Typora\typora-user-images\image-20230209212227646.png)
+
+* 取消双击shift搜索（Ctrl+N）
+
+![image-20230209212530449](C:\Users\11782\AppData\Roaming\Typora\typora-user-images\image-20230209212530449.png)
+
+* 是否多行显示tab
+
+![image-20230209212639995](C:\Users\11782\AppData\Roaming\Typora\typora-user-images\image-20230209212639995.png)
+
+### 3.工程与模块管理
+
+![image-20230209212755307](C:\Users\11782\AppData\Roaming\Typora\typora-user-images\image-20230209212755307.png)
+
+<u>**工程本身也是一个module，不同的module可以选择不同的JDK**</u>
+
+![image-20230209213327631](C:\Users\11782\AppData\Roaming\Typora\typora-user-images\image-20230209213327631.png)
+
+<u>**Module可以被Remove为普通的文件包，下面的Java文件就无法执行了**</u>
+
+![image-20230209214236232](C:\Users\11782\AppData\Roaming\Typora\typora-user-images\image-20230209214236232.png)
+
+**<u>讲普通文件夹升级成Module</u>**
