@@ -198,11 +198,14 @@ cd ~/mysql
 docker run -id \
 -p 3307:3306 \
 --name=c_mysql \
--v $PWD/conf:/etc/etc/mysql/conf.d \
+-v $PWD/conf:/etc/mysql/conf.d \
 -v $PWD/logs:/logs \
 -v $PWD/data:/var/lib/mysql \
--e MYSQL_ROOT_PASSWORD=123456 \
+-e MYSQL_ROOT_PASSWORD=biodwhub503 \
 mysql
+
+# 示例:
+docker run -id -p 3307:3306 --restart=always --name=retro_mysql -–privileged -v $PWD/conf:/etc/mysql/conf.d -v $PWD/logs:/logs -v $PWD/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=biodwhub503 mysql:8.0.32
 
 # 进入到容器
 docker exec -it c_mysql /bin/bash

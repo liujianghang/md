@@ -70,7 +70,7 @@ router/index.js中
 
 ```javascript
 import Vue from 'vue'
-import R outer from 'vue-router'
+import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 
 // 使用插件
