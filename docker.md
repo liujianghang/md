@@ -202,7 +202,7 @@ docker run -id \
 -v $PWD/logs:/logs \
 -v $PWD/data:/var/lib/mysql \
 -e MYSQL_ROOT_PASSWORD=biodwhub503 \
-mysql
+mysql:8.0.32
 
 # 示例:
 docker run -id -p 3307:3306 --restart=always --name=retro_mysql -–privileged -v $PWD/conf:/etc/mysql/conf.d -v $PWD/logs:/logs -v $PWD/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=biodwhub503 mysql:8.0.32
@@ -259,11 +259,12 @@ vim nginx.conf
 ···
 cd ~/nginx
 # 创建容器，建立映射
-docker run -id --name=c_nginx \ 
--p 80:80 \
--v $PWD/conf/nginx.conf:/etc/nginx/nginx.conf
+docker run -id --name=c_nginx \
+-p 9250:80 \
+-v $PWD/conf/nginx.conf:/etc/nginx/nginx.conf \
 -v $PWD/logs:/var/log/nginx \
--v $PWD/html:/usr/share/nginx/html \
+-v $PWD/pid:/var/run \
+-v /home/user/RetroSysthesis/front-end/www/dist:/nginx-server/RetroSynthesis-frontend/dist \
 nginx
 ```
 
@@ -278,6 +279,19 @@ docker pull redis
 docker run -id --name=c_redis -p 6379:6379 redis
 # 外部访问redis
 ./redis-cli.exe -h 192.168.206.128 -p 6379
+```
+
+#### 7.flask部署并访问mysql容器(配合gunicorn)
+
+```shell
+docker run -it --name=retrosyntheis-backend \
+-d \
+-p 5001:5001 \
+-p 8222:8222 \
+--link retro_mysql \
+--restart=always \
+-v $PWD:/flask-server/RetroSynthesis-backend \
+python:3.9
 ```
 
 ### 8.Dockerfile
